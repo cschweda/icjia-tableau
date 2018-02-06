@@ -11,18 +11,18 @@ export default new Router({
     return { x: 0, y: 0 };
   },
   routes: [
-    {
-      path: "/",
-      redirect: "/article"
-    },
+    // {
+    //   path: "/",
+    //   redirect: "/article"
+    // },
 
     {
-      path: "/article",
+      path: "/",
       name: "article",
       component: article
     },
 
 
-    { path: "/*", redirect: "/article" }
+    { path: "/*", redirect: "/" }
   ]
 });

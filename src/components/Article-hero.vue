@@ -5,17 +5,17 @@
 
             <div class="title" v-dummy="5"></div>
             <br>
-            <div class="title" v-dummy="4">With Tailwind and CSS Grid</div>
+            <div class="title" v-dummy="4"></div>
 
         </div>
-        <div class="award">
+        <!-- <div class="award">
 
             <blockquote>"Vitae viverra a sit
                 <br /> ipsum auctor adipiscing."
                 <br />
                 <cite>-libero a nunc amet</cite>
             </blockquote>
-        </div>
+        </div> -->
 
     </section>
 
@@ -28,7 +28,7 @@
         width: 100%;
         height: 750px;
         padding: 45px 12% 0 12%;
-        background-image: url(http://via.placeholder.com/1550X950);
+        background-image: url(https://via.placeholder.com/1550X950);
 
         z-index: -1;
         background-size: cover;

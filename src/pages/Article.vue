@@ -8,7 +8,7 @@
             <h1 v-dummy="10"></h1>
             <p v-dummy="100">test</p>
             <center>
-                <viz :uuid="generateUUID()" thumbnail="http://public.tableau.com/static/images/Op/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash/1_rss.png"
+                <viz :uuid="generateUUID()" thumbnail="https://public.tableau.com/static/images/Op/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash/1_rss.png"
                     viz="https://public.tableau.com/views/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash?:embed=y&:display_count=yes"
                 />
             </center>
@@ -20,7 +20,7 @@
             <p v-dummy="100">test</p>
 
             <center>
-                <viz :uuid="generateUUID()" thumbnail="http://public.tableau.com/static/images/Op/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash/1_rss.png"
+                <viz :uuid="generateUUID()" thumbnail="https://public.tableau.com/static/images/Op/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash/1_rss.png"
                     viz="https://public.tableau.com/views/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash?:embed=y&:display_count=yes"
                 />
             </center>
@@ -46,6 +46,13 @@
     import { sample01, sample02 } from "@/code";
     const uuidv4 = require('uuid/v4');
 
+    if (!('remove' in Element.prototype)) {
+        Element.prototype.remove = function () {
+            if (this.parentNode) {
+                this.parentNode.removeChild(this);
+            }
+        };
+    }
 
     export default {
         name: "A0",
@@ -60,6 +67,7 @@
                 return el + id;
             },
             displayViz: function (id, e) {
+
                 var thumb = document.getElementById('vizThumb-' + id);
                 thumb.remove();
                 var divElement = document.getElementById('divElement-' + id);
