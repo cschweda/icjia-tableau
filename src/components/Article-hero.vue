@@ -8,14 +8,7 @@
             <div class="title" v-dummy="4"></div>
 
         </div>
-        <!-- <div class="award">
 
-            <blockquote>"Vitae viverra a sit
-                <br /> ipsum auctor adipiscing."
-                <br />
-                <cite>-libero a nunc amet</cite>
-            </blockquote>
-        </div> -->
 
     </section>
 
@@ -47,9 +40,6 @@
         grid-area: message;
     }
 
-    .award {
-        grid-area: award;
-    }
 
     .message {
         grid-area: message;

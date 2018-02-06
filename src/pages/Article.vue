@@ -63,33 +63,8 @@
             generateUUID: function () {
                 return "" + uuidv4();
             },
-            generateElement: function (el, id) {
-                return el + id;
-            },
-            displayViz: function (id, e) {
 
-                var thumb = document.getElementById('vizThumb-' + id);
-                thumb.remove();
-                var divElement = document.getElementById('divElement-' + id);
-                var vizElement = document.getElementById("vizElement-" + id);
-                var url = "https://public.tableau.com/views/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash?:embed=y&:display_count=yes"
-                let options = {
-                    hideTabs: true,
-                    onFirstInteractive: function () {
-                        console.log("Run this code when the viz has finished loading.");
-                    }
-                };
 
-                if (divElement.offsetWidth > 800) {
-                    vizElement.style.width = '1000px';
-                    vizElement.style.height = '827px';
-                } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; }
-                else { vizElement.style.width = '100%'; vizElement.style.height = '1294px'; }
-
-                // Create a viz object and embed it in the container div.
-
-                var viz = new tableau.Viz(vizElement, url, options);
-            }
         },
         data() {
             return {
