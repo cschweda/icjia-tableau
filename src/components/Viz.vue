@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div :id="generateId('divElement')" @click="displayViz()">
+        <div :id="generateId('divElement')" @click="displayViz()" class="viz-hover">
             <div :id="generateId('vizElement')" style="width: 100%" class="viz"></div>
             <div :id="generateId('thumb')">
                 <img :src="thumbnail" :id="generateId('vizThumb')">
@@ -29,6 +29,7 @@
                 var thumb = document.getElementById('vizThumb-' + this.uuid);
                 thumb.remove();
                 var divElement = document.getElementById('divElement-' + this.uuid);
+                divElement.classList.remove('viz-hover')
                 var vizElement = document.getElementById("vizElement-" + this.uuid);
                 var url = this.viz
                 let options = {
@@ -58,3 +59,20 @@
 
     };
 </script>
+<style>
+    .viz-hover:hover {
+
+        box-shadow: 0px 0px 50px #000000;
+        z-index: 200;
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(1.05);
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(1.05);
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(1.05);
+        transition: all 300ms ease-in;
+        transform: scale(1.05);
+        cursor: pointer;
+        opacity: 1;
+    }
+</style>

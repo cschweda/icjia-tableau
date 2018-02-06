@@ -6,18 +6,18 @@
 
         <article>
             <h1 v-dummy="10"></h1>
-            <p v-dummy="100">test</p>
+            <p v-dummy="100"></p>
             <center>
                 <viz :uuid="generateUUID()" thumbnail="https://public.tableau.com/static/images/Op/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash/1_rss.png"
                     viz="https://public.tableau.com/views/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash?:embed=y&:display_count=yes"
                 />
             </center>
 
-            <p v-dummy="100">test</p>
+            <p v-dummy="100"></p>
 
-            <p v-dummy="100">test</p>
+            <p v-dummy="100"></p>
 
-            <p v-dummy="100">test</p>
+            <p v-dummy="100"></p>
 
             <center>
                 <viz :uuid="generateUUID()" thumbnail="https://public.tableau.com/static/images/Op/OpioidPrescriptionsandOverdoseDeathsinIllinois/FullDash/1_rss.png"
@@ -28,9 +28,9 @@
 
             <h2 v-dummy="10"></h2>
 
-            <p v-dummy="100">test</p>
+            <p v-dummy="100"></p>
 
-            <p v-dummy="100">test</p>
+            <p v-dummy="100"></p>
 
 
         </article>
@@ -171,6 +171,8 @@
         width: 150px;
         background: red;
     }
+
+
 
 
     @media (max-width: 1050px) {
