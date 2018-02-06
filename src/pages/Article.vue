@@ -154,7 +154,7 @@
     };
 </script>
 
-<style>
+<style scoped>
     :root {}
 
     .no-scroll {
