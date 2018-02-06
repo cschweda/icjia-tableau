@@ -28,7 +28,7 @@
         <div class="burger">
             <button class="hamburger hamburger--collapse" :class="{ ' is-active ': drawer}" type="button" @click.stop="toggleDrawer">
                 <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
+                    <span class="hamburger-inner hamburger-overlay"></span>
                 </span>
             </button>
         </div>
@@ -88,6 +88,28 @@
     export default {
         name: "A0",
         mounted: function () {
+            var scrollObject = {};
+            window.onscroll = getScrollPosition;
+
+            function getScrollPosition() {
+                scrollObject = {
+                    x: window.pageXOffset,
+                    y: window.pageYOffset
+                }
+
+                if (scrollObject.y > 740) {
+                    document.getElementsByClassName("hamburger-inner")[0].classList.add('hamburger-dark')
+                    document.getElementsByClassName("hamburger-inner")[0].classList.remove('hamburger-overlay')
+                    document.getElementsByClassName("hamburger-inner")[0].classList.remove('hamburger-light')
+
+                    //console.log(document.getElementsByClassName("burger")[0].classList)
+
+                } else {
+                    document.getElementsByClassName("hamburger-inner")[0].classList.add('hamburger-light')
+                    document.getElementsByClassName("hamburger-inner")[0].classList.add('hamburger-overlay')
+                    document.getElementsByClassName("hamburger-inner")[0].classList.remove('hamburger-dark')
+                }
+            }
 
         },
         methods: {
@@ -95,7 +117,16 @@
                 return "" + uuidv4();
             },
             toggleDrawer: function (e) {
+                let el = document.getElementsByClassName("hamburger-inner")[0].classList
+                if (!el.contains('hamburger-overlay')) {
+                    document.getElementsByClassName("hamburger-inner")[0].classList.add('hamburger-overlay')
+                }
                 this.drawer = !this.drawer;
+                this.drawer
+                    ? document.body.classList.add("no-scroll") :
+                    document.body.classList.remove("no-scroll")
+                this.drawer
+                    ? document.getElementsByClassName("hamburger-inner")[0].classList.add('hamburger-overlay') : document.getElementsByClassName("hamburger-inner")[0].classList.remove('hamburger-overlay')
                 this.drawer
                     ? (document.getElementsByClassName("overlay")[0].style.height = "100%")
                     : (document.getElementsByClassName("overlay")[0].style.height = "0%");
@@ -123,8 +154,12 @@
     };
 </script>
 
-<style scoped>
+<style>
     :root {}
+
+    .no-scroll {
+        overflow: hidden;
+    }
 
     pre {
         margin-top: 25px !important;
@@ -133,11 +168,6 @@
 
     p {
         line-height: 1.5em
-    }
-
-    .viz {
-        margin-top: 50px;
-        margin-bottom: 50px
     }
 
     article {
@@ -222,7 +252,7 @@
     }
 
     .burger {
-        background: #fff;
+
         width: 50px;
         vertical-align: middle;
         position: fixed;
@@ -230,6 +260,8 @@
         left: 10px;
         z-index: 20;
     }
+
+
 
     .burger,
     .burger *,
@@ -245,14 +277,30 @@
         background-color: #555;
         border-radius: 4px;
         position: absolute;
-        -webkit-transition-property: -webkit-transform;
-        transition-property: -webkit-transform;
-        transition-property: transform;
-        transition-property: transform, -webkit-transform;
-        -webkit-transition-duration: 0.15s;
-        transition-duration: 0.15s;
-        -webkit-transition-timing-function: ease;
-        transition-timing-function: ease;
+    }
+
+    .hamburger-inner.hamburger-light,
+    .hamburger-inner.hamburger-light::before,
+    .hamburger-inner.hamburger-light::after {
+
+        background-color: #fff;
+
+    }
+
+    .hamburger-inner.hamburger-dark,
+    .hamburger-inner.hamburger-dark::before,
+    .hamburger-inner.hamburger-dark::after {
+
+        background-color: #555;
+
+    }
+
+    .hamburger-inner.hamburger-overlay,
+    .hamburger-inner.hamburger-overlay::before,
+    .hamburger-inner.hamburger-overlay::after {
+
+        background-color: #fff;
+
     }
 
     /* The Overlay (background) */
