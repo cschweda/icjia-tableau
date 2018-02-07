@@ -133,7 +133,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: [".*"]
       }
-    ])
+    ]),
+
   ]
 });
 
@@ -158,5 +159,19 @@ if (config.build.bundleAnalyzerReport) {
     .BundleAnalyzerPlugin;
   webpackConfig.plugins.push(new BundleAnalyzerPlugin());
 }
+
+if (config.build.prerender) {
+  const PrerenderSPAPlugin = require('prerender-spa-plugin')
+
+  webpackConfig.plugins.push(new PrerenderSPAPlugin({
+    // Required - The path to the webpack-outputted app to prerender.
+    staticDir: path.join(__dirname, '../dist'),
+    // Required - Routes to render.
+    routes: ['/'],
+  }));
+}
+
+
+
 
 module.exports = webpackConfig;

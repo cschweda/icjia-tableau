@@ -9,7 +9,7 @@
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "format": "prettier es5 --tab-width=4 --print-width=120 --write src/**/*.{js,vue}"
+    "format": "prettier es5 --tab-width=4 --print-width=120 --write src/**/*.{js,vue}",
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.3",

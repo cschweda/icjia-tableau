@@ -118,7 +118,7 @@
             };
         },
         metaInfo: {
-
+            title: 'Tableau 10 Article Demo',
         },
         components: {
 

@@ -68,6 +68,20 @@
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.0.22.tgz#720457bda0e5866265e5e0f8fe4fbd857fa5653f"
 
+"@prerenderer/prerenderer@^0.6.0":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@prerenderer/prerenderer/-/prerenderer-0.6.1.tgz#623658ac4ee56e099a0fa6fad9a0a20a51fcb44c"
+  dependencies:
+    express "^4.16.2"
+    portfinder "^1.0.13"
+
+"@prerenderer/renderer-puppeteer@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@prerenderer/renderer-puppeteer/-/renderer-puppeteer-0.1.0.tgz#397faf3d8c1f7194ab0c1e47f5019a7eda431cc7"
+  dependencies:
+    promise-limit "^2.5.0"
+    puppeteer "^1.0.0"
+
 "@types/node@*":
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.0.tgz#b85a0bcf1e1cc84eb4901b7e96966aedc6f078d1"
@@ -5091,15 +5105,21 @@ mixin-object@^2.0.1:
     for-in "^0.1.3"
     is-extendable "^0.1.1"
 
-mkdirp@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.0.tgz#1d73076a6df986cd9344e15e71fcc05a4c9abf12"
+mkdirp-promise@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/mkdirp-promise/-/mkdirp-promise-5.0.1.tgz#e9b8f68e552c68a9c1713b84883f7a1dd039b8a1"
+  dependencies:
+    mkdirp "*"
+
+mkdirp@*, mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
 
-mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
+mkdirp@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.0.tgz#1d73076a6df986cd9344e15e71fcc05a4c9abf12"
   dependencies:
     minimist "0.0.8"
 
@@ -6149,6 +6169,14 @@ prepend-http@^1.0.0, prepend-http@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
 
+"prerender-spa-plugin@https://github.com/chrisvfritz/prerender-spa-plugin#0ea034a44f11e12b930a2b85a358592fd752ef16":
+  version "3.0.0-dev.0"
+  resolved "https://github.com/chrisvfritz/prerender-spa-plugin#0ea034a44f11e12b930a2b85a358592fd752ef16"
+  dependencies:
+    "@prerenderer/prerenderer" "^0.6.0"
+    "@prerenderer/renderer-puppeteer" "^0.1.0"
+    mkdirp-promise "^5.0.1"
+
 preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
@@ -6189,6 +6217,10 @@ progress@^2.0.0:
 promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
+
+promise-limit@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/promise-limit/-/promise-limit-2.5.0.tgz#5ea5751c943b97d64cba999e8c81a04eba57e7d4"
 
 proxy-addr@~2.0.2:
   version "2.0.2"
