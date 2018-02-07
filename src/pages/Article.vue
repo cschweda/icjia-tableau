@@ -146,9 +146,7 @@
 
     article {
         display: grid;
-        display: -ms-grid;
         grid-template-columns: 1fr 3fr 1fr;
-        -ms-grid-columns: 150px 1fr 150px;
         grid-column-gap: 10px;
         font-family: "Libre Baskerville", serif;
         background: #fff;
