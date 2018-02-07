@@ -43,7 +43,7 @@
                     vizElement.style.width = '1000px';
                     vizElement.style.height = '827px';
                 } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; }
-                else { vizElement.style.width = '100%'; vizElement.style.height = '1294px'; }
+                else { vizElement.style.width = '100%'; vizElement.style.height = '1094px'; }
 
                 // Create a viz object and embed it in the container div.
 
@@ -62,7 +62,8 @@
 <style scoped>
     .viz {
         margin-top: 25px;
-        margin-bottom: 25px
+        margin-bottom: 25px;
+        margin-left: -20px;
     }
 
     .viz-hover:hover {
