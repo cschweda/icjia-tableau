@@ -4,25 +4,26 @@
 
 
 
-        <header>
-            <div class="nav nav-float nav-float--unpinned">
-                <ul>
-                    <li class="home">
-                        <a href="#">ICJIA Home</a>
-                    </li>
+        <nav class="nav headroom headroom--unpinned">
+            <a href="" class="nav-link">
+                <div class="logo">ICJIA LOGO</div>
+            </a>
+            <a href="" class="nav-link">
+                <div class="title " v-dummy="15"></div>
+            </a>
 
-                    <li class="about">
-                        <a href="#">About</a>
-                    </li>
-                    <li class="news">
-                        <a href="#">Newsletter</a>
-                    </li>
-                    <li class="contact">
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
+            <div class="social">
+                <a href="" class="nav-link">
+                    <i class="social fab fa-twitter-square "></i>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="social fab fa-facebook-square "></i>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="social fab fa-github-square "></i>
+                </a>
             </div>
-        </header>
+        </nav>
 
         <hero />
 
@@ -90,14 +91,14 @@
                 }
 
                 if (scrollObject.y > 730) {
-                    document.getElementsByClassName("nav-float")[0].classList.add('nav-float--pinned')
-                    document.getElementsByClassName("nav-float")[0].classList.remove('nav-float--unpinned')
+                    document.getElementsByClassName("nav")[0].classList.add('headroom--pinned')
+                    document.getElementsByClassName("nav")[0].classList.remove('headroom--unpinned')
 
 
 
                 } else {
-                    document.getElementsByClassName("nav-float")[0].classList.remove('nav-float--pinned')
-                    document.getElementsByClassName("nav-float")[0].classList.add('nav-float--unpinned')
+                    document.getElementsByClassName("nav")[0].classList.remove('headroom--pinned')
+                    document.getElementsByClassName("nav")[0].classList.add('headroom--unpinned')
 
                 }
             }
@@ -218,105 +219,74 @@
      * 
      */
 
-    .nav {
+    nav {
         position: fixed;
-        /* Set the navbar to fixed position */
         top: 0;
-        /* Position the navbar at the top of the page */
+
         width: 100%;
-        /* Full width */
         z-index: 1000;
-    }
-
-    .nav ul {
-        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        min-height: 50px;
+        padding-top: .5em;
+        padding-bottom: 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+        border: 1px solid #333;
         background-color: #555;
-        text-align: center;
-        padding: 0;
-        margin: 0;
+        -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+
+
+
     }
 
-    .nav li {
+    nav .title,
+    nav .logo,
+    nav .social {
         font-family: 'Oswald', sans-serif;
-        font-size: 1.2em;
-        line-height: 40px;
-        height: 40px;
-        border-bottom: 1px solid #888;
+        color: #eee;
+        font-weight: 900;
     }
 
-    .nav a {
-        text-decoration: none;
+    .nav-link {
         color: #fff;
-        display: block;
-        transition: .3s background-color;
+        text-decoration: none;
     }
 
-    .nav a:hover {
-        background-color: orange;
+    .nav-link *:hover {
+        color: orange;
     }
 
-    .nav a.active {
-        background-color: #fff;
-        color: #444;
-        cursor: default;
-    }
 
-    @media screen and (min-width: 600px) {
-        .nav li {
-            width: 120px;
-            border-bottom: none;
-            height: 50px;
-            line-height: 50px;
-            font-size: 1.4em;
-        }
 
-        /* Option 1 - Display Inline */
-        .nav li {
-            display: inline-block;
-            margin-right: -4px;
-        }
-
-        /* Options 2 - Float
-  .nav li {
-    float: left;
-  }
-  .nav ul {
-    overflow: auto;
-    width: 600px;
-    margin: 0 auto;
-  }
-  .nav {
-    background-color: #444;
-  }
-  */
-    }
-
-    .nav-float {
+    .headroom {
         will-change: transform;
-        transition: transform 500ms linear;
+        transition: transform 200ms linear;
     }
 
-    .nav-float--pinned {
-
+    .headroom--pinned {
         transform: translateY(0%);
     }
 
-    .nav-float--unpinned {
-
-        transform: translateY(-200%);
+    .headroom--unpinned {
+        transform: translateY(-100%);
     }
 
-
-
-    @media (max-width: 1050px) {
-        article {
-            grid-template-columns: auto;
-            grid-column-gap: 10px;
+    @media (max-width: 600px) {
+        .nav {
+            flex-direction: column;
+            justify-content: center;
         }
 
-        article>figure {
-            grid-column: -1;
-            margin: 20px 0;
+        nav .title,
+        nav .logo,
+        nav .social {
+            align-self: center;
+            margin-top: 15px;
         }
+
     }
 </style>
