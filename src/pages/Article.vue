@@ -2,13 +2,13 @@
 
     <section class="page-wrapper">
         <nav class="nav headroom headroom--unpinned">
-            <a href="" class="nav-link">
+            <a class="nav-link">
                 <div class="logo">
-                    <img v-dummy:30 height="20" width="40" />
+                    <img src="/static/logos/icjia-02.png" />
                 </div>
             </a>
             <router-link to="/" class="nav-link">
-                <div class="title " v-dummy="15"></div>
+                <div class="title " v-dummy="12"></div>
             </router-link>
 
             <div class="social" style="width: 100px">
@@ -92,7 +92,7 @@
                     y: window.pageYOffset
                 }
 
-                if (scrollObject.y > 730) {
+                if (scrollObject.y > 200) {
                     document.getElementsByClassName("nav")[0].classList.add('headroom--pinned')
                     document.getElementsByClassName("nav")[0].classList.remove('headroom--unpinned')
 
@@ -146,7 +146,7 @@
 
     article {
         display: grid;
-        grid-template-columns: 100px 1fr 100px;
+        grid-template-columns: 1fr 3fr 1fr;
         grid-column-gap: 10px;
         font-family: "Libre Baskerville", serif;
         background: #fff;
@@ -249,13 +249,17 @@
     }
 
     nav .logo {
-        padding-top: .5em;
-        padding-bottom: .5em;
+        padding-top: .3em;
+        padding-bottom: .3em;
+    }
+
+    nav .logo img {
+        height: 45px;
     }
 
     nav .title {
-        padding-top: .4em;
-        padding-bottom: .5em;
+        padding-top: .9em;
+
     }
 
     .icon {
@@ -264,7 +268,7 @@
     }
 
     .social * {
-        margin-top: 4px;
+        margin-top: 8px;
 
 
     }
@@ -293,27 +297,68 @@
         transform: translateY(-100%);
     }
 
+    .logo:hover {
+        cursor: pointer !important;
+    }
+
+    .logo img:hover {
+        box-shadow: 0px 0px 30px #333;
+        cursor: pointer !important;
+
+
+    }
+
+    @media (max-width: 800px) {
+        article {
+            grid-template-columns: 50px 1fr 50px
+        }
+
+    }
+
     @media (max-width: 600px) {
         .page-wrapper {
             margin-top: -5px;
         }
+
+        /* nav {
+            display: none
+        } */
+        article {
+
+            grid-template-columns: 20px 1fr 20px;
+
+        }
+
+        .logo {
+            margin-top: 10px
+        }
+
+        .logo img {
+            height: 60px;
+        }
         .nav {
             flex-direction: column;
             justify-content: center;
-            padding-bottom: 25px;
+            padding-bottom: 20px;
             margin-top: -5px;
         }
 
-        nav .title,
+
         nav .logo,
             {
             align-self: center;
-            margin-top: 5px;
+
+        }
+
+        nav .title {
+            text-align: center;
+            font-size: 12px;
+            align-self: center;
+            margin-top: -10px;
         }
 
         nav .social {
             display: none;
         }
-
     }
 </style>
