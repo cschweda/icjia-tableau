@@ -1,27 +1,29 @@
 <template>
 
     <section class="page-wrapper">
-
-
-
         <nav class="nav headroom headroom--unpinned">
             <a href="" class="nav-link">
-                <div class="logo">ICJIA LOGO</div>
+                <div class="logo">
+                    <img v-dummy:30 height="20" width="40" />
+                </div>
             </a>
-            <a href="" class="nav-link">
+            <router-link to="/" class="nav-link">
                 <div class="title " v-dummy="15"></div>
-            </a>
+            </router-link>
 
-            <div class="social">
-                <a href="" class="nav-link">
-                    <i class="social fab fa-twitter-square "></i>
-                </a>
-                <a href="" class="nav-link">
-                    <i class="social fab fa-facebook-square "></i>
-                </a>
-                <a href="" class="nav-link">
-                    <i class="social fab fa-github-square "></i>
-                </a>
+            <div class="social" style="width: 100px">
+                <div class="icon">
+                    <i class="social fab fa-twitter-square fa-lg"></i>
+                </div>
+
+                <div class="icon">
+                    <i class="social fab fa-facebook-square fa-lg"></i>
+                </div>
+
+                <div class="icon">
+                    <i class="social fab fa-github-square fa-lg"></i>
+                </div>
+
             </div>
         </nav>
 
@@ -63,7 +65,7 @@
 </template>
 
 <script>
-    import Prism from "vue-prism-component";
+
     import Hero from "@/components/Article-hero";
     import Viz from "@/components/Viz"
     import { sample01, sample02 } from "@/code";
@@ -94,8 +96,6 @@
                     document.getElementsByClassName("nav")[0].classList.add('headroom--pinned')
                     document.getElementsByClassName("nav")[0].classList.remove('headroom--unpinned')
 
-
-
                 } else {
                     document.getElementsByClassName("nav")[0].classList.remove('headroom--pinned')
                     document.getElementsByClassName("nav")[0].classList.add('headroom--unpinned')
@@ -118,12 +118,10 @@
             };
         },
         metaInfo: {
-            // title: 'My Awesome Webapp',
-            // override the parent template and just use the above title only
-            // titleTemplate: null
+
         },
         components: {
-            Prism,
+
             Viz,
             Hero
         }
@@ -228,9 +226,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        min-height: 50px;
-        padding-top: .5em;
-        padding-bottom: 1em;
+        min-height: 30px;
+
         padding-left: 2em;
         padding-right: 2em;
         border: 1px solid #333;
@@ -249,6 +246,27 @@
         font-family: 'Oswald', sans-serif;
         color: #eee;
         font-weight: 900;
+    }
+
+    nav .logo {
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+
+    nav .title {
+        padding-top: .4em;
+        padding-bottom: .5em;
+    }
+
+    .icon {
+        display: inline-block;
+        padding-right: 8px;
+    }
+
+    .social * {
+        margin-top: 4px;
+
+
     }
 
     .nav-link {
@@ -276,16 +294,25 @@
     }
 
     @media (max-width: 600px) {
+        .page-wrapper {
+            margin-top: -5px;
+        }
         .nav {
             flex-direction: column;
             justify-content: center;
+            padding-bottom: 25px;
+            margin-top: -5px;
         }
 
         nav .title,
         nav .logo,
-        nav .social {
+            {
             align-self: center;
-            margin-top: 15px;
+            margin-top: 5px;
+        }
+
+        nav .social {
+            display: none;
         }
 
     }
