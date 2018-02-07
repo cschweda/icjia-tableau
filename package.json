@@ -23,6 +23,7 @@
     "lodash": "^4.17.4",
     "node-sass": "^4.7.2",
     "postcss-font-magician": "^2.1.0",
+    "prerender-spa-plugin": "https://github.com/chrisvfritz/prerender-spa-plugin#0ea034a44f11e12b930a2b85a358592fd752ef16",
     "prettier": "^1.10.2",
     "prismjs": "^1.10.0",
     "sass-loader": "^6.0.6",
